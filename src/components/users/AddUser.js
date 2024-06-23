@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
+import React from "react";
+import Card from "../UI/card";
+import "./AddUser.css";
 
-function AddUser(){
-  const[UserName,setUserName]=useState("");
-  const[Age,setAge]=useState("")
-  
-    function addUserHandler(event){
-      event.preventDefault();
-      setUserName("");
-      setAge("")
-    }
+const AddUser = () => {
+  const addUserHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <form onSubmit={addUserHandler}>
-      <label htmlFor="username">Username</label>
-  <input type="text" id="username" />
-
-  <label htmlFor="age">Age</label>
-  <input type="number" id="age" />
-      <button type="submit">Add User</button>
-    </form>
-      )
-}
+    <Card className="input">
+      <form onSubmit={addUserHandler}>
+        <label htmlFor="username">Username</label>
+        <input id="username" type="text" />
+        <label htmlFor="age">Age</label>
+        <input id="age" type="number" />
+        <button type="submit">Add User</button>
+      </form>
+    </Card>
+  );
+};
 
 export default AddUser;
